@@ -1,3 +1,5 @@
+import config from './config.js';
+
 const container = document.querySelector('.container');
 const searchButton = document.querySelector('.search-box button');
 const inputField = document.querySelector('.search-box input');
@@ -5,14 +7,13 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
-const API_KEY = process.env.API_KEY
 
 function fetchWeather() {
     const city = inputField.value;
 
     if (city === '') return;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${config.API_KEY}`)
         .then(response => response.json())
         .then(json => {
 
