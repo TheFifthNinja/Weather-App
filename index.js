@@ -1,4 +1,4 @@
-import config from './config';
+import config from './config.js';
 
 const container = document.querySelector('.container');
 const searchButton = document.querySelector('.search-box button');
